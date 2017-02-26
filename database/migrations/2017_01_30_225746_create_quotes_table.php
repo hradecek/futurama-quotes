@@ -15,7 +15,7 @@ class CreateQuotesTable extends Migration
     {
         Schema::create('quotes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('text');
+            $table->string('text')->unique();
             $table->string('language_id');
             $table->foreign('language_id')->references('code')->on('languages');
         });
