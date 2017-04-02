@@ -1,0 +1,22 @@
+{
+  "name": "futurama-quotes",
+  "version": "1.0.0",
+  "description": "Simple web-site, futurama quotes.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hradecek/futurama-quotes.git"
+  },
+  "keywords": [
+    "futurama",
+    "quotes",
+    "lumen"
+  ],
+  "author": "Ivo Hradek",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  }
+}
