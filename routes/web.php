@@ -10,4 +10,4 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-$app->get('/', ['uses' => 'QuoteController@getRandom']);
+$app->get('/', ['uses' => 'QuoteController@random']);

@@ -3,6 +3,7 @@
   font-family: 'fr-title';
   src: url('/fonts/fr-title.ttf');
 }
+
 @font-face {
   font-family: 'fr-bold';
   src: url('/fonts/fr-bold.ttf');
@@ -18,8 +19,28 @@
   src: url('/fonts/fr-fal2.ttf');
 }
 
+/* Colors */
+$dark-blue:  #01253D;
+$light-blue: #4F919F;
+
 body {
-  background-color: #0F446F;
+  color: #F2F5EE;
+  height: 200px;
+  background: repeating-linear-gradient(
+    to right,
+    #1d828b,
+    #1d828b 10px,
+    #258996 10px,
+    #258996 20px
+  );
+
+}
+
+.container {
+  max-width: 1000px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title {
@@ -27,6 +48,76 @@ body {
   font-family: fr-title, sans-serif;
 }
 
-.quote {
-  font-family: fr-bold, sans-serif;
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 -10px 20px white;
+
+  &.footer-left {
+    float: left;
+  }
+
+  &.footer-right {
+    float: right;
+  }
+}
+
+.character {
+  height: 500px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.oval-quote {
+  color: $light-blue;
+  position: relative;
+  width: 500px;
+  padding: 50px 40px;
+  margin: 1em auto 80px;
+  text-align: center;
+  background: $dark-blue;
+  /* background: -webkit-gradient(linear, 0 0, 0 100%, from($dark-blue), to(#075698));
+  background: -moz-linear-gradient(#2e88c4, $dark-blue);
+  background: -o-linear-gradient(#2e88c4, $dark-blue);
+  background: linear-gradient(#2e88c4, $dark-blue); */
+  -webkit-border-radius: 220px 120px;
+  -moz-border-radius: 220px / 120px;
+  border-radius: 220px / 120px;
+
+  > p {
+    font-size: 1.25em;
+  }
+
+  /* creates the larger circle */
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 470px;
+    width: 30px;
+    height: 30px;
+    background: $dark-blue;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+  }
+
+  /* creates the smaller circle */
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 500px;
+    width: 15px;
+    height: 15px;
+    background: $dark-blue;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+  }
 }
