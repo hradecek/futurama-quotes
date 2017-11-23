@@ -44,8 +44,14 @@ body {
 }
 
 .title {
-  font-size: 60px;
-  font-family: fr-title, sans-serif;
+  font-size: 72px;
+  font-family: fr-bold, sans-serif;
+  text-align: center;
+  color: #df2e1d;
+  background: -webkit-linear-gradient(bottom, #df2e1d, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  // TODO: text-shadow: -3px 3px #d2ba32;
 }
 
 .footer {
