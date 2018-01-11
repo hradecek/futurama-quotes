@@ -23,15 +23,20 @@
 $dark-blue:  #053B55;
 $light-blue: #216685;
 
+/* Sizes */
+$header-height: 100px;
+$footer-height: 55px;
+$footer-logo-height: 50px;
+
 body {
   color: $light-blue;
   background: $dark-blue;
-  overflow: hidden;
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
+.header {
+  border: 1px solid blue;
+  position: relative;
+  height: 100px;
 }
 
 .title {
@@ -39,6 +44,7 @@ body {
   font-size: 52px;
   text-align: center;
   font-family: fr-bold, sans-serif;
+  margin-top: 0.33em;
 
   > div {
     position: absolute;
@@ -49,34 +55,16 @@ body {
   }
 
   &:after {
-    text-shadow: 15px 4px #D2BA32;
+    text-shadow: 6px 4px #D2BA32;
     color: transparent;
     content: attr(title);
   }
 }
 
-.footer {
-  border: 1px solid red;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 55px;
-
-  .footer-left {
-    float: left;
-    border: 1px dashed red;
-    margin-top: 3px; // Due to logo
-  }
-
-  .footer-right {
-    float: right;
-    border: 1px dashed red;
-  }
-
-  .planet-express-logo {
-    vertical-align: middle;
-  }
+.content {
+  border: 1px solid yellow;
+  position: relative;
+  height: calc(100vh - #{$header-height} - #{$footer-height} - 15px);
 }
 
 .oval-quote {
@@ -128,17 +116,87 @@ body {
 .character-container {
   border: 1px solid red;
   position: absolute;
-  right: 0;
-  bottom: 0;
   height: 50%;
   width: 50%;
+  bottom: 0;
+  right: 0;
   text-align: center;
-  margin-bottom: 55px;
 
   .character {
     border: 1px solid red;
     height: 100%;
     position: relative;
-    margin-left: 55px;
+    margin-left: 25%;
   }
 }
+
+
+.footer {
+  border: 1px solid red;
+  height: $footer-height;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  .footer-left {
+    border: 1px dashed red;
+    float: left;
+  }
+
+  .planet-express-logo {
+    vertical-align: middle;
+    height: $footer-logo-height;
+  }
+}
+
+/* .container {
+  //border: 1px solid yellow;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  border: 1px solid red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+
+  .footer-left {
+    float: left;
+    border: 1px dashed red;
+    margin-top: 3px; // Due to logo
+  }
+
+  .footer-right {
+    float: right;
+    border: 1px dashed red;
+  }
+
+  .planet-express-logo {
+    vertical-align: middle;
+  }
+}
+
+.title {
+  border: 1px solid black;
+  font-size: 52px;
+  text-align: center;
+  font-family: fr-bold, sans-serif;
+
+  > div {
+    position: relative;
+    width: 100%;
+    background-image: -webkit-linear-gradient(bottom, #df2e1d 25%, #7A1913);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:after {
+    text-shadow: 15px 4px #D2BA32;
+    color: transparent;
+    content: attr(title);
+  }
+}*/
