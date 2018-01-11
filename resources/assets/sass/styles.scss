@@ -22,6 +22,9 @@
 /* Colors */
 $dark-blue:  #053B55;
 $light-blue: #216685;
+$body-bg-color: #053B55;
+$bubble-bg-color: #01253D;
+$footer-bg-color: #01253D;
 
 /* Sizes */
 $header-height: 100px;
@@ -34,13 +37,12 @@ body {
 }
 
 .header {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   position: relative;
   height: 100px;
 }
 
 .title {
-  border: 1px solid black;
   font-size: 52px;
   text-align: center;
   font-family: fr-bold, sans-serif;
@@ -62,23 +64,22 @@ body {
 }
 
 .content {
-  border: 1px solid yellow;
   position: relative;
   height: calc(100vh - #{$header-height} - #{$footer-height} - 15px);
 }
 
 .oval-quote {
+  background: $bubble-bg-color;
   position: relative;
-  border: 1px solid red;
   color: $light-blue;
   width: 500px;
   padding: 50px 40px;
   margin: auto;
   text-align: center;
-  background: $dark-blue;
   -webkit-border-radius: 220px 120px;
   -moz-border-radius: 220px / 120px;
   border-radius: 220px / 120px;
+  box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.5);
 
   > p {
     font-size: 1.25em;
@@ -92,10 +93,11 @@ body {
     left: 500px;
     width: 30px;
     height: 30px;
-    background: black;
+    background-color: $bubble-bg-color;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
+    box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.5);
   }
 
   // creates the smaller circle
@@ -106,15 +108,16 @@ body {
     left: 530px;
     width: 15px;
     height: 15px;
-    background: black;
+    background: $bubble-bg-color;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
+    box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.5);
   }
 }
 
 .character-container {
-  border: 1px solid red;
+  // border: 1px solid red;
   position: absolute;
   height: 50%;
   width: 50%;
@@ -123,23 +126,24 @@ body {
   text-align: center;
 
   .character {
-    border: 1px solid red;
+    // border: 1px solid red;
     height: 100%;
     position: relative;
-    margin-left: 25%;
   }
 }
 
 
 .footer {
-  border: 1px solid red;
+  width: 100%;
   height: $footer-height;
   position: absolute;
   left: 0;
   bottom: 0;
+  background-color: #01253D;
+  // box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
+  border-top: solid darken($footer-bg-color, 3) 2px;
 
   .footer-left {
-    border: 1px dashed red;
     float: left;
   }
 
@@ -147,56 +151,15 @@ body {
     vertical-align: middle;
     height: $footer-logo-height;
   }
-}
 
-/* .container {
-  //border: 1px solid yellow;
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer {
-  border: 1px solid red;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 55px;
-
-  .footer-left {
-    float: left;
-    border: 1px dashed red;
-    margin-top: 3px; // Due to logo
-  }
-
-  .footer-right {
-    float: right;
-    border: 1px dashed red;
-  }
-
-  .planet-express-logo {
-    vertical-align: middle;
-  }
-}
-
-.title {
-  border: 1px solid black;
-  font-size: 52px;
-  text-align: center;
-  font-family: fr-bold, sans-serif;
-
-  > div {
-    position: relative;
+  .city-bg {
+    position: absolute;
+    height: 200px;
     width: 100%;
-    background-image: -webkit-linear-gradient(bottom, #df2e1d 25%, #7A1913);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    bottom: calc(#{$footer-height + 2px});
+    background: url('../img/city.png') repeat-x;
+    background-size: contain;
+    z-index: -1;
+    opacity: 0.3;
   }
-
-  &:after {
-    text-shadow: 15px 4px #D2BA32;
-    color: transparent;
-    content: attr(title);
-  }
-}*/
+}

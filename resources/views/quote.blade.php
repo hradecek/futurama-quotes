@@ -21,8 +21,9 @@
   </div>
   <!-- Footer -->
   <div class="footer">
-      <img class="planet-express-logo" src="img/planet_express_logo50.png" alt="Planet Express Logo" height="50">
-      Provided by Planet Express, Inc.
+    <div class="city-bg"></div>
+    <img class="planet-express-logo" src="img/planet_express_logo50.png" alt="Planet Express Logo" height="50">
+    Provided by Planet Express, Inc.
   </div>
 </body>
 </html>
