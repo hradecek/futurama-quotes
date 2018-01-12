@@ -69,6 +69,7 @@ body {
 }
 
 .oval-quote {
+  font-family: fr-bold, sans-serif;
   background: $bubble-bg-color;
   position: relative;
   color: $light-blue;
@@ -132,6 +133,22 @@ body {
   }
 }
 
+.heads-menu {
+  position: absolute;
+  top: 75px;
+  z-index: 2;
+  .head-button {
+    background: Transparent no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+  }
+
+  .head-icon {
+    height: 75px;
+  }
+}
 
 .footer {
   width: 100%;
@@ -148,8 +165,16 @@ body {
   }
 
   .planet-express-logo {
+    margin-top: 2px;
     vertical-align: middle;
     height: $footer-logo-height;
+  }
+
+  .provided {
+    font-family: fr-bold, sans-serif;
+    position: absolute;
+    bottom: 18px;
+    font-size: 12px;
   }
 
   .city-bg {
