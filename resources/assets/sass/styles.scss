@@ -137,16 +137,24 @@ body {
   position: absolute;
   top: 75px;
   z-index: 2;
+  width: 95px;
+
   .head-button {
     background: Transparent no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;
-    outline:none;
+    outline: none;
+    width: 100%;
   }
 
   .head-icon {
-    height: 75px;
+    height: 65px;
+    padding: 5px;
+  }
+
+  .head-icon:hover {
+    transform: scale(1.5);
   }
 }
 
