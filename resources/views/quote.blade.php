@@ -14,10 +14,20 @@
   <div class="heads-menu">
     <button class="head-button" type="submit">
       <img class="head-icon" src="img/characters/icons/fry_head.ico" alt="Fry's quotes"><br>
+    </button>
+    <button class="head-button" type="submit">
       <img class="head-icon" src="img/characters/icons/bender_head.ico" alt="Bender's quotes"><br>
+    </button>
+    <button class="head-button" type="submit">
       <img class="head-icon" src="img/characters/icons/leela_head.ico" alt="Leela's quotes"><br>
+    </button>
+    <button class="head-button" type="submit">
       <img class="head-icon" src="img/characters/icons/professor_head.png" alt="Professor's quotes"><br>
+    </button>
+    <button class="head-button" type="submit">
       <img class="head-icon" src="img/characters/icons/zoidberg_head.png" alt="Dr. Zoidberg's quotes"><br>
+    </button>
+    <button class="head-button" type="submit">
       <img class="head-icon" src="img/characters/icons/amy_head.png" alt="Amy's quotes">
     </button>
   </div>
