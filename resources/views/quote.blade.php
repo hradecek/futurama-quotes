@@ -34,7 +34,7 @@
   <!-- Content -->
   <div class="content">
     <blockquote class="oval-quote">
-      <p id="quote" >{{ $quote }}</p>
+      <p id="quote" >{!! $quote !!}</p>
     </blockquote>
     <div class="character-container">
       <img class="character" src="{{ $characterImgUri }}" alt=""/>
@@ -54,7 +54,7 @@
             var character = $(this).attr('data-character');
             $.ajax({ url: '/' + character,
                 success: function(response) {
-                    $('#quote').text(response.quote);
+                    $('#quote').html(response.quote);
                     $('.character').attr('src', response.image);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {

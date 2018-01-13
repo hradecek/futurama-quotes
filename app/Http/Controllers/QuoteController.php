@@ -23,7 +23,8 @@ class QuoteController extends BaseController
     public function quote($character)
     {
         $character_id = Character::where('nick', $character)->first()->id;
-        $quote_id = DB::table('character_quote')->where('character_id', $character_id)
+        $quote_id = DB::table('character_quote')
+                      ->where('character_id', $character_id)
                       ->inRandomOrder()
                       ->first()
                       ->quote_id;
