@@ -80,6 +80,7 @@ body {
   -moz-border-radius: 220px / 120px;
   border-radius: 220px / 120px;
   box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 
   > p {
     font-size: 1.25em;
@@ -98,6 +99,7 @@ body {
     -moz-border-radius: 30px;
     border-radius: 30px;
     box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
   }
 
   // creates the smaller circle
@@ -113,6 +115,7 @@ body {
     -moz-border-radius: 15px;
     border-radius: 15px;
     box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
   }
 }
 
