@@ -14,10 +14,11 @@ class CreateQuotesTable extends Migration
     public function up()
     {
         Schema::create('quotes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('text')->unique();
+            $table->unsignedInteger('id');
+            $table->string('text');
             $table->string('language_id');
             $table->foreign('language_id')->references('code')->on('languages');
+            $table->primary('id');
         });
     }
 

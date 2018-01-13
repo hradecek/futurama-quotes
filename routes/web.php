@@ -11,3 +11,4 @@
 |
 */
 $app->get('/', ['uses' => 'QuoteController@random']);
+$app->get('/{character}', ['uses' => 'QuoteController@quote']);

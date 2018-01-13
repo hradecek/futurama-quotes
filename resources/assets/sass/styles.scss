@@ -118,7 +118,6 @@ body {
 }
 
 .character-container {
-  // border: 1px solid red;
   position: absolute;
   height: 50%;
   width: 50%;
@@ -127,7 +126,6 @@ body {
   text-align: center;
 
   .character {
-    // border: 1px solid red;
     height: 100%;
     position: relative;
   }
@@ -157,7 +155,6 @@ body {
     height: 65px;
     padding: 5px;
   }
-
 }
 
 .footer {
@@ -167,7 +164,6 @@ body {
   left: 0;
   bottom: 0;
   background-color: #01253D;
-  // box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
   border-top: solid darken($footer-bg-color, 3) 2px;
 
   .footer-left {
