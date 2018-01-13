@@ -29,7 +29,7 @@ class QuoteController extends BaseController
                       ->quote_id;
         $quote = Quote::where('id', $quote_id)->first()->text;
 
-        return response()->json(['quote' => $quote, 'imageUrl' => $this->characterRandomImageUri()]);
+        return response()->json(['quote' => $quote, 'image' => $this->characterRandomImageUri()]);
     }
 
     /* TODO: Move out of controller! */

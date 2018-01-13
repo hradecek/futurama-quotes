@@ -55,7 +55,7 @@
             $.ajax({ url: '/' + character,
                 success: function(response) {
                     $('#quote').text(response.quote);
-                    $('.character').attr('src', response.imageUrl);
+                    $('.character').attr('src', response.image);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     // TODO: Do something
