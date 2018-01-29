@@ -2,42 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use App\Character;
-use App\Quote;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\DB;
+use App\Repositories\Contracts\CharacterRepository;
+use App\Repositories\Contracts\QuoteRepository;
 use Illuminate\Support\Facades\File as FileSystem;
 use Illuminate\Support\Facades\File;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
 class QuoteController extends BaseController
 {
+    const VIEW_MAIN = 'quote';
+
+    private $quoteRepository;
+    private $characterRepository;
+
+    public function __construct(QuoteRepository $quoteRepository, CharacterRepository $characterRepository)
+    {
+        $this->quoteRepository = $quoteRepository;
+        $this->characterRepository = $characterRepository;
+    }
+
     public function random()
     {
-        $quote = Quote::inRandomOrder()->firstOrFail()->text;
+        $quote = $this->quoteRepository->findRandom()->text;
         $characterImgUri = $this->characterRandomImageUri();
 
-        return view('quote', compact('quote', 'characterImgUri'));
+        return view(self::VIEW_MAIN, compact('quote', 'characterImgUri'));
     }
 
-    public function quote($character)
+    public function quoteById($id)
     {
-        $character_id = Character::where('nick', $character)->first()->id;
-        $quote_id = DB::table('character_quote')
-                      ->where('character_id', $character_id)
-                      ->inRandomOrder()
-                      ->first()
-                      ->quote_id;
-        $quote = Quote::where('id', $quote_id)->first()->text;
+        $quote = $this->quoteRepository->findById($id);
+        $characterImgUri = $this->characterRandomImageUri();
 
-        return response()->json(['quote' => $quote, 'image' => $this->characterRandomImageUri()]);
+        return view(self::VIEW_MAIN, compact('quote', 'characterImgUri'));
     }
 
-    /* TODO: Move out of controller! */
-    const CHARACTERS_PATH = "img/characters/";
+    public function quoteByCharacter($character)
+    {
+        $character = $this->characterRepository->findByNick($character);
+        if (null === $character) {
+            abort(404);
+        }
+        $quote = $this->quoteRepository->findByCharacter($character->id)->text;
+        $characterImgUri = $this->characterRandomImageUri();
+
+        return view(self::VIEW_MAIN, compact('quote' , 'characterImgUri'));
+    }
+
+    const CHARACTERS_PATH = 'img/characters/';
     private function characterRandomImageUri()
     {
-        $characterNicknames = Character::inRandomOrder()->get(['nick']);
+        $characterNicknames = $this->characterRepository->findAllNicknames();
         while ($characterNicknames->isNotEmpty()) {
             $nick = $characterNicknames->pop()->nick;
             $characterDir = self::CHARACTERS_PATH . $nick;

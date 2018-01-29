@@ -11,4 +11,19 @@
 |
 */
 $app->get('/', ['uses' => 'QuoteController@random']);
-$app->get('/{character}', ['uses' => 'QuoteController@quote']);
+$app->get('/quote/{id}', ['uses' => 'QuoteController@quoteById']);
+$app->get('/{character}', ['uses' => 'QuoteController@quoteByCharacter']);
+
+
+/*
+|--------------------------------------------------------------------------
+| RESTful API v1 routes
+|--------------------------------------------------------------------------
+|
+| Here is define RESTful API v1. Note, that API is immutable.
+*/
+$app->group(['prefix' => 'api/v1'], function () use ($app) {
+    $app->get('/', ['uses' => 'QuoteApiV1Controller@version']);
+    $app->get('random', ['uses' => 'QuoteApiV1Controller@random']);
+});
+

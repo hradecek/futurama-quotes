@@ -6,12 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Character extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [ 'name' ];
+    protected $guarded = [ 'name', 'nick' ];
+
+    protected $hidden = [ 'id' ];
 
     public function quotes()
     {
