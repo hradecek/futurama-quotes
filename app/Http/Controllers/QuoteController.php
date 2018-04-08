@@ -37,6 +37,14 @@ class QuoteController extends BaseController
         return view(self::VIEW_MAIN, compact('quote', 'characterImgUri'));
     }
 
+    public function updateQuote()
+    {
+        $quote = $this->quoteRepository->findRandom()->text;
+        $characterImgUri = $this->characterRandomImageUri();
+
+        return response()->json(compact('quote', 'characterImgUri'));
+    }
+
     public function quoteByCharacter($character)
     {
         $character = $this->characterRepository->findByNick($character);

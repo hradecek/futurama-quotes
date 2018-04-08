@@ -11,6 +11,7 @@
 |
 */
 $app->get('/', ['uses' => 'QuoteController@random']);
+$app->get('/ajax', ['uses' => 'QuoteController@updateQuote']);
 $app->get('/quote/{id}', ['uses' => 'QuoteController@quoteById']);
 $app->get('/{character}', ['uses' => 'QuoteController@quoteByCharacter']);
 
