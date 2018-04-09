@@ -26,21 +26,20 @@
   <div id="slider" class="sl-slider-wrapper">
     <div class="sl-slider">
       <div class="sl-slide bg-1" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-      <div class="sl-slide-inner">
-        <div class="deco" data-icon="a"></div>
-        <h2>Futurama Quotes</h2>
-        <blockquote><p>{!! $quote !!}</p></blockquote>
+        <div class="sl-slide-inner">
+          <div class="deco" data-icon="a"></div>
+          <blockquote><p class="blue">{!! $quote !!}</p></blockquote>
+          <div class="footer blue">
+            <div class="city-bg"></div>
+            <img class="planet-express-logo" src="img/planet_express_logo50.png" alt="Planet Express Logo" height="50">
+            <span class="provided">Provided by Planet Express, Inc.</span>
+          </div>
         </div>
       </div>
     </div>
     <nav id="nav-arrows" class="nav-arrows">
-      <span class="nav-arrow-next">Random</span>
+      <span class="nav-arrow-next blue">Random</span>
     </nav>
-    <div class="footer">
-      <div class="city-bg"></div>
-      <img class="planet-express-logo" src="img/planet_express_logo50.png" alt="Planet Express Logo" height="50">
-      <span class="provided">Provided by Planet Express, Inc.</span>
-    </div>
   </div>
 </div>
 <script type="text/javascript" src="/js/jquery.min.js"></script>

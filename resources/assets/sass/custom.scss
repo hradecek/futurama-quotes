@@ -1,3 +1,5 @@
+@import 'colors';
+
 .fq .sl-slider-wrapper {
   position: absolute;
   width: 100%;
@@ -34,11 +36,20 @@
   }
 
   &.nav-arrow-next {
-    right: 5%;
-    border-left: none;
-    border-bottom: none;
-  }
+    &.blue {
+      border: 8px solid rgba(1,37,61,0.4);
+      border-left: none;
+      border-bottom: none;
+      right: 5%;
+    }
 
+    &.green {
+      border: 8px solid rgba(0,128,105,0.4);
+      border-left: none;
+      border-bottom: none;
+      right: 5%;
+    }
+  }
 }
 
 .fq .deco {
@@ -70,8 +81,8 @@
 
 .fq .sl-slide {
   h2 {
-    color: #000;
-    text-shadow: 0 0 1px #000;
+    color: $yellow;
+    text-shadow: 2px 2px $red;
     padding: 20px;
     position: absolute;
     font-size: 34px;
@@ -84,7 +95,7 @@
     text-align: center;
     line-height: 50px;
     bottom: 50%;
-    margin: 0 0 -100px 0;
+    margin: 0 0 0 0;
   }
 
   blockquote {
@@ -99,7 +110,7 @@
     color: #8b8b8b;
     z-index: 2;
     bottom: 50%;
-    margin: 0 0 -200px 0;
+    margin: 0 0 -50px 0;
     padding: 0;
 
     p {
@@ -109,7 +120,6 @@
       position: relative;
 
       &:before {
-        color: rgba(244, 244, 244, 0.65);
         font-family: "Bookman Old Style", Bookman, Garamond, serif;
         position: absolute;
         line-height: 60px;
@@ -120,6 +130,26 @@
         left: -80px;
         top: 35px;
         content: '\201C';
+      }
+    }
+
+    .blue {
+      color: $yellow;
+      text-shadow: 1px 1px $red;
+
+      &:before {
+        color: $footer-blue;
+        text-shadow: none;
+      }
+    }
+
+    .green {
+      color: $light-red;
+      text-shadow: 1px 1px $yellow;
+
+      &:before {
+        color: $footer-green;
+        text-shadow: none;
       }
     }
 
@@ -137,22 +167,22 @@
 /* First Slide */
 .fq .bg-1 .sl-slide-inner,
 .fq .bg-1 .sl-content-slice {
-  background: #fff;
+  background: $body-bg-color;
 }
 
 /* Second Slide */
 .fq .bg-2 .sl-slide-inner,
 .fq .bg-2 .sl-content-slice {
-  background: #000;
+  background: $green;
 }
 
 .fq .bg-2 [data-icon]:after,
 .fq .bg-2 h2 {
-  color: #fff;
+  color: $light-blue;
 }
 
 .fq .bg-2 blockquote:before {
-  color: #222;
+  color: $light-blue;
 }
 
 /* Animations */
@@ -344,7 +374,7 @@
   }
 
   .fq .sl-slide blockquote {
-    margin-bottom: -120px;
+    margin-bottom: -70px;
   }
 
   .fq .sl-slide h2 {

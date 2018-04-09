@@ -15,21 +15,27 @@ $(function() {
                 var activeQuote = $('.sl-slide').last();
                 var nextOrientation = (activeQuote.attr('data-orientation') === 'vertical' || activeQuote.length === 0) ? 'horizontal' : 'vertical';
                 var nextBg = activeQuote.hasClass('bg-1') ? 'bg-2' : 'bg-1';
+                var footerColor = $('.footer').last().hasClass('blue') ? 'green' : 'blue';
+                var footer =
+                '<div class="footer ' + footerColor +'">'+
+                    '<div class="city-bg"></div>' +
+                    '<img class="planet-express-logo" src="img/planet_express_logo50.png" alt="Planet Express Logo" height="50">' +
+                    '<span class="provided">Provided by Planet Express, Inc.</span>' +
+                '</div>';
                 var item = $(
                     '<div class="sl-slide ' + nextBg + '" data-orientation="' + nextOrientation + '" ' +
                         'data-slice1-rotation="-5" data-slice2-rotation="10"' +
                         'data-slice1-scale="2" data-slice2-scale="1">' +
                         '<div class="sl-slide-inner">' +
                             '<div class="deco"></div>' +
-                            '<h2>Futurama Quotes</h2>' +
-                            '<blockquote><p>' + response.quote + '</p></blockquote>' +
+                            '<blockquote><p class="' + footerColor + '">' + response.quote + '</p></blockquote>' +
+                            footer +
                         '</div>' +
                     '</div>');
                 setCharacterImg(response.characterImgUri);
                 slitslider.add(item);
             },
-            error: function (xhr, ajaxOptions, thrownError) {
-            }
+            error: function (xhr, ajaxOptions, thrownError) { }
         });
     };
 
@@ -43,6 +49,10 @@ $(function() {
         var initEvents = function() {
             navArrows.children(':first').on('click', function() {
                 addItem(slitslider);
+                var next = $('.nav-arrow-next');
+                var nextColor = next.hasClass('blue') ? 'green' : 'blue';
+                next.removeClass();
+                next.addClass('nav-arrow-next').addClass(nextColor);
                 slitslider.next();
                 return false;
             });

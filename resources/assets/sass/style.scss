@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import 'colors';
 
 /* Futurama fonts */
 @font-face {
@@ -20,13 +21,6 @@
   font-family: 'fr-fal2';
   src: url('/fonts/fr-fal2.ttf');
 }
-
-/* Colors */
-$dark-blue:  #053B55;
-$light-blue: #216685;
-$body-bg-color: #053B55;
-$bubble-bg-color: #01253D;
-$footer-bg-color: #01253D;
 
 /* Sizes */
 $footer-height: 55px;
@@ -54,11 +48,11 @@ html {
 }
 
 body {
-  font-family: 'Lato', Calibri, Arial, sans-serif;
-  background: #fff;
+  font-family: fr-bold, 'Lato', Calibri, Arial, sans-serif;
+  color: $light-blue;
+  background: $dark-blue;
   font-weight: 300;
   font-size: 15px;
-  color: #333;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -111,8 +105,19 @@ a {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: #01253D;
-  border-top: solid darken($footer-bg-color, 3) 2px;
+  z-index: 1;
+
+  &.blue {
+    background-color: $footer-blue;
+    border-top: solid darken($footer-blue, 3) 2px;
+    color: $light-blue;
+  }
+
+  &.green {
+    background-color: $footer-green;
+    border-top: solid darken($footer-green, 3) 2px;
+    color: $green;
+  }
 
   .footer-left {
     float: left;
@@ -135,10 +140,16 @@ a {
     position: absolute;
     height: 200px;
     width: 100%;
-    bottom: calc(#{$footer-height + 2px});
+    bottom: calc(#{$footer-height});
     background: url('/img/city.png') repeat-x;
     background-size: contain;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.2;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .city-bg {
+    display: none;
   }
 }
