@@ -6,3 +6,6 @@ Homestead.yaml
 composer.lock
 node_modules/
 *.min.css
+*.min.js
+!modernizr.custom.min.js
+!jquery.ba-cond.min.js

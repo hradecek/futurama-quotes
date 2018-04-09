@@ -15,6 +15,11 @@
   <noscript>
     <link rel="stylesheet" type="text/css" href="css/styleNoJS.min.css" />
   </noscript>
+  <style data-class="character">
+    .fq .deco:after {
+      background-image: url('{!! $characterImgUri !!}');
+    }
+  </style>
 </head>
 <body>
 <div class="container fq">
@@ -22,7 +27,7 @@
     <div class="sl-slider">
       <div class="sl-slide bg-1" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
       <div class="sl-slide-inner">
-        <div class="deco"><img class="character-img" src="/img/characters/fry/fry_1.png"></div>
+        <div class="deco" data-icon="a"></div>
         <h2>Futurama Quotes</h2>
         <blockquote><p>{!! $quote !!}</p></blockquote>
         </div>
@@ -31,6 +36,11 @@
     <nav id="nav-arrows" class="nav-arrows">
       <span class="nav-arrow-next">Random</span>
     </nav>
+    <div class="footer">
+      <div class="city-bg"></div>
+      <img class="planet-express-logo" src="img/planet_express_logo50.png" alt="Planet Express Logo" height="50">
+      <span class="provided">Provided by Planet Express, Inc.</span>
+    </div>
   </div>
 </div>
 <script type="text/javascript" src="/js/jquery.min.js"></script>
